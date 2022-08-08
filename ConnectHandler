@@ -1,0 +1,19 @@
+import os
+from netmiko immport ConnectHandler
+from getpass import getpass
+from netmiko.ssh_execption import AuthenticationException
+
+USERNAME = imput("Please enter your SSH name: ")
+PASS = getpass("Please enter your SSH password: ")
+
+device = {
+          'ip':'192.168.1.10', 
+          'username':USERNAME, 
+          'password':PASS,
+          'device_type':'cisco_ios'
+          }
+try: c = ConnectHandler(**devices)
+output = C.Sender.Command('show run')
+f= output('backup.conf','x')
+f.write(output)
+f.close
